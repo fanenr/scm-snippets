@@ -3,6 +3,8 @@
     (display (car args))
     (for-each (lambda (arg) (display #\space) (display arg)) (cdr args))))
 
+; (define print (lambda args (print-list args)))
+
 (define (print . args)
   (print-list args))
 
@@ -30,12 +32,12 @@
   (my-print-list args)
   (newline))
 
-(println)
-(println 1)
-(println 1 2)
-(println 1 2 3)
+; (println)
+; (println 1)
+; (println 1 2)
+; (println 1 2 3)
 
-(my-println)
-(my-println 1)
-(my-println 1 2)
-(my-println 1 2 3)
+; (my-println)
+; (my-println 1)
+; (my-println 1 2)
+; (my-println 1 2 3)
