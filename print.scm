@@ -1,12 +1,20 @@
 (define (print-list args)
   (unless (null? args)
     (display (car args))
-    (for-each (lambda (arg) (display #\space) (display arg)) (cdr args))))
+    (for-each (lambda (arg) 
+                (display #\space)
+                (display arg))
+              (cdr args))))
 
-; (define print (lambda args (print-list args)))
+; (define print (lambda args
+;                 (print-list args)))
 
 (define (print . args)
   (print-list args))
+
+; (define println (lambda args
+;                   (print-list args)
+;                   (newline)))
 
 (define (println . args)
   (print-list args)
@@ -23,7 +31,10 @@
 (define (my-print-list args)
   (unless (null? args)
     (display (car args))
-    (my-for-each (lambda (arg) (display #\space) (display arg)) (cdr args))))
+    (my-for-each (lambda (arg)
+                   (display #\space)
+                   (display arg))
+                 (cdr args))))
 
 (define (my-print . args)
   (my-print-list args))
