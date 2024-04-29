@@ -7,15 +7,22 @@
 (define (++ n)
   (+ n 1))
 
-; (define (assert expr . strs)
-;   (unless expr
-;     (call-with-values (lambda () (apply values strs))
-;                       println)
+; (define (assert test . strs)
+;   (unless test
+;     (call-with-values
+;       (lambda ()
+;         (apply values strs))
+;       println)
 ;     (exit 1)))
 
-(define (assert expr . strs)
-  (unless expr
-    (println-list strs)
+; (define (assert test . strs)
+;   (unless test
+;     (println-list strs)
+;     (exit 1)))
+
+(define (assert test . strs)
+  (unless test
+    (apply println strs)
     (exit 1)))
 
 (define (main args)
