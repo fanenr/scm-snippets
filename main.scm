@@ -4,6 +4,9 @@
 
 (load "print.scm")
 
+(use-modules
+  ((arthur print) #:prefix my:))
+
 (define (++ n)
   (+ n 1))
 
@@ -12,17 +15,17 @@
 ;     (call-with-values
 ;       (lambda ()
 ;         (apply values strs))
-;       println)
+;       my:println)
 ;     (exit 1)))
 
 ; (define (assert test . strs)
 ;   (unless test
-;     (println-list strs)
+;     (my:println-list strs)
 ;     (exit 1)))
 
 (define (assert test . strs)
   (unless test
-    (apply println strs)
+    (apply my:println strs)
     (exit 1)))
 
 (define (main args)
@@ -37,9 +40,9 @@
   (assert (integer? max) "please pass a integer")
 
   ; (let loop ((i 0))
-  ;   (println i)
+  ;   (my:println i)
   ;   (if (>= i max) 'null
   ;     (loop (++ i))))
 
   (do ((i 0 (++ i))) ((>= i max) 'null)
-    (println i)))
+    (my:println i)))
