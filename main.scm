@@ -7,8 +7,9 @@
 (use-modules
   ((arthur print) #:prefix my:))
 
-(define (++ n)
-  (+ n 1))
+(define-syntax inc
+  (syntax-rules ()
+    ((_ val) (+ val 1))))
 
 ; (define (assert test . strs)
 ;   (unless test
@@ -44,5 +45,6 @@
   ;   (if (>= i max) 'null
   ;     (loop (++ i))))
 
-  (do ((i 0 (++ i))) ((>= i max) 'null)
+  (do ((i 0 (inc i)))
+      ((>= i max))
     (my:println i)))
