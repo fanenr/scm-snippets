@@ -1,3 +1,6 @@
+(define-module (arthur print)
+  #:export (print println print-list println-list))
+
 (define (non-null-list? ls)
   (and (list? ls) (not (null? ls))))
 
@@ -63,8 +66,6 @@
 
 (define (my-println . args)
   (my-println-list args))
-
-;;; examples
 
 ; (println)
 ; (println 1)

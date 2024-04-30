@@ -2,7 +2,10 @@
 -e main -s
 !#
 
-(use-modules (ice-9 rdelim) (ice-9 binary-ports) (ice-9 textual-ports))
+(use-modules
+  (ice-9 rdelim)
+  (ice-9 binary-ports)
+  (ice-9 textual-ports))
 
 (define stdin (current-input-port))
 (define stdout (current-output-port))
