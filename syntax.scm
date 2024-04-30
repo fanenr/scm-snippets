@@ -2,6 +2,14 @@
   (ice-9 format)
   (language tree-il))
 
+(define-syntax inc
+  (syntax-rules ()
+    ((_ val) (+ val 1))))
+
+(define-syntax inc!
+  (syntax-rules ()
+    ((_ var) (set! var (+ var 1)))))
+
 (define-syntax my-when
   (syntax-rules ()
     ((_ pred exp exp* ...)
