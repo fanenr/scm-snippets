@@ -23,4 +23,26 @@
 (define e '(1 2 . 3))
 (format #t "e: ~a\n" e)
 (format #t "e is pair? ~a\n" (pair? e))
-(format #t "e is list? ~a\n" (list? e))
+(format #t "e is list? ~a\n\n" (list? e))
+
+; (quote exp ...)
+(define ls1 '(1 2 3))
+(format #t "ls1: ~a\n" ls1)
+
+(define ls2 '(1 2 (+ 1 2)))
+(format #t "ls2: ~a\n" ls2)
+
+; (quasiquote exp ...)
+; (quasiquote (unquote exp) ...)
+; (quasiquote (unqutoe-splicing ls) ...)
+(define ls3 `(,@ls1))
+(format #t "ls3: ~a\n" ls3)
+
+(define ls4 `(1 2 (+ 1 2)))
+(format #t "ls4: ~a\n" ls4)
+
+(define ls5 `(1 2 ,(+ 1 2)))
+(format #t "ls5: ~a\n" ls5)
+
+#! this is block comments !#
+#| this is #| nested |# block comments |#
