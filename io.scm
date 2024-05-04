@@ -1,7 +1,3 @@
-#!/usr/bin/guile3.0 \
--e main -s
-!#
-
 (use-modules
   (ice-9 rdelim)
   (ice-9 binary-ports)
