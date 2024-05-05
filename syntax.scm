@@ -13,7 +13,7 @@
 (define-syntax my-when
   (syntax-rules ()
     ((_ pred exp exp* ...)
-      (if pred (begin exp exp* ...)))))
+      (if pred (begin exp exp* ...) #f))))
 
 (define-syntax my-let
   (syntax-rules ()

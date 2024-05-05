@@ -16,8 +16,7 @@
     (set! tp (open-file to   "wb"))
     (while #t
       (set! bt (get-u8 fp))
-      (when (eof-object? bt)
-        (break))
+      (when (eof-object? bt) (break))
       (put-u8 tp bt))
     (set! result #t))
   result)
