@@ -46,3 +46,12 @@
 
 #! this is block comments !#
 #| this is #| nested |# block comments |#
+
+(define kont #f)
+
+(format #t "the return is ~a\n"
+        (call/cc (lambda (k)
+                   (set! kont k)
+                   1)))
+
+(kont 2)
